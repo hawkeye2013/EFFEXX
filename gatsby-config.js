@@ -1,8 +1,16 @@
+const siteMetadata = {
+  title: `Programming For Humans`,
+  description: `Learn how to program!`,
+  image: `/default-site-img.jpg`,
+  siteUrl: `https://programming.for-humans.io`,
+  siteLanguage: `en`,
+  siteLocale: `en_us`,
+  twitterUsername: `@TuckerHawkinson`,
+  authorName: `Tucker Hawkinson`
+};
+
 module.exports = {
-  siteMetadata: {
-    title: `Programming For Humans`,
-    description: `Learn how to program!`
-  },
+  siteMetadata: siteMetadata,
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
