@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `EFFEXX`,
-    description: `This is my coding blog!`
+    title: `Programming For Humans`,
+    description: `Learn how to program!`
   },
   plugins: [
     {

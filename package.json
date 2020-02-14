@@ -1,7 +1,7 @@
 {
-  "name": "effexx",
+  "name": "programming-for-humans",
   "version": "0.1.0",
-  "description": "EFFEXX Blog",
+  "description": "Learn to program!",
   "main": "index.js",
   "scripts": {
     "build": "gatsby build",
