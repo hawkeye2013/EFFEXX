@@ -1,0 +1,21 @@
+{
+  "name": "effexx",
+  "version": "0.1.0",
+  "description": "EFFEXX Blog",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gatsby develop -p 9988 -o"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mdx-js/mdx": "^1.5.5",
+    "@mdx-js/react": "^1.5.5",
+    "gatsby": "^2.19.17",
+    "gatsby-plugin-mdx": "^1.0.72",
+    "gatsby-source-filesystem": "^2.1.48",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

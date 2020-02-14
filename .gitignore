@@ -1,0 +1,10 @@
+# Project Dependencies
+node_modules
+.cache
+
+# Build
+public
+
+# Other
+.DS_Store
+yarn-error.log
