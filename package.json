@@ -4,6 +4,7 @@
   "description": "EFFEXX Blog",
   "main": "index.js",
   "scripts": {
+    "build": "gatsby build",
     "dev": "gatsby develop -p 9988 -o"
   },
   "keywords": [],
