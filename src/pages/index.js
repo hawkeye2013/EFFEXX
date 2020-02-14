@@ -2,10 +2,15 @@ import React from 'react';
 import { Layout } from '../components/Layout';
 import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 
 const IndexWrapper = styled.main``;
 
 const PostWrapper = styled.main``;
+
+const Image = styled(Img)`
+  border-radius: 5px;
+`;
 
 export default ({ data }) => {
   return (
@@ -15,6 +20,9 @@ export default ({ data }) => {
           {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
             <PostWrapper key={id}>
               <Link to={fields.slug}>
+                {!!frontmatter.cover ? (
+                  <Image sizes={frontmatter.cover.childImageSharp.sizes} />
+                ) : null}
                 <h1>{frontmatter.title}</h1>
                 <p>{frontmatter.date}</p>
                 <p>{excerpt}</p>
@@ -38,7 +46,15 @@ export const query = graphql`
         excerpt(pruneLength: 250)
         frontmatter {
           title
-          date
+          date(formatString: "YYYY MMMM Do")
+          cover {
+            publicURL
+            childImageSharp {
+              sizes(maxWidth: 2000, traceSVG: { color: "#693" }) {
+                ...GatsbyImageSharpSizes_tracedSVG
+              }
+            }
+          }
         }
         fields {
           slug
