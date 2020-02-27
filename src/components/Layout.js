@@ -4,7 +4,7 @@ import { Header } from './Header';
 import styled from 'styled-components';
 
 const AppStyles = styled.main`
-  max-width: 540px;
+  max-width: 800px;
   margin: 0 auto;
 `;
 
