@@ -41,6 +41,23 @@ module.exports = {
         path: `${__dirname}/posts`,
         name: `posts`
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-web-font-loader`,
+      options: {
+        google: {
+          families: ['Poppins:400,700', 'Pridi:400,700', 'Space Mono:400,700']
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Programming For Humans`,
+        short_name: 'PFH',
+        start_url: `/`
+      }
+    },
+    `gatsby-plugin-offline`
   ]
 };
