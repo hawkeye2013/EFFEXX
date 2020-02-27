@@ -4,6 +4,7 @@
   "description": "Learn to program!",
   "main": "index.js",
   "scripts": {
+    "test": "echo \" no tests active!\"",
     "dev": "gatsby develop -p 9988 -o",
     "build": "gatsby build",
     "serve": "gatsby serve -p 9500 -o"
