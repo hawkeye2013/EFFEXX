@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 import SEO from 'react-seo-component';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
-import { H1 } from '../components/pageElements/H1';
+import { H2 } from '../components/pageElements/H2';
 import { Header } from '../components/Header';
 
 const IndexContainer = styled.main`
@@ -91,7 +91,7 @@ export default ({ data }) => {
                   <Image sizes={frontmatter.cover.childImageSharp.sizes} />
                 ) : null}
                 <PostCardContent>
-                  <H1>{frontmatter.title}</H1>
+                  <H2>{frontmatter.title}</H2>
                   <p>{frontmatter.date}</p>
                   <p>{excerpt}</p>
                 </PostCardContent>

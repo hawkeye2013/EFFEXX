@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { AutoLink } from './linked-headers';
 
 const StyledText = styled.h1`
-  font-size: ${({ theme }) => theme.fontSize['sm']};
+  font-size: ${({ theme }) => theme.fontSize.sm};
   font-weight: 700;
   font-family: ${({ theme }) => theme.fonts.sans};
   ${AutoLink};

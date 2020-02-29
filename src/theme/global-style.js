@@ -32,11 +32,11 @@ export const theme = {
     base: '1rem',
     lg: '1.125rem',
     xl: '1.25rem',
-    '2xl': '1.5rem',
-    '3xl': '1.875rem',
-    '4xl': '2.25rem',
-    '5xl': '3rem',
-    '6xl': '4rem'
+    smallHeader: '1.5rem',
+    mediumHeader: '1.875rem',
+    largeHeader: '2.25rem',
+    smallDisplay: '3rem',
+    display: '4rem'
   },
   fontWeight: {
     hairline: '100',
