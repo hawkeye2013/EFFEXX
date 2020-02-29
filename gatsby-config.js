@@ -15,25 +15,34 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-mdx`,
-      gatsbyRemarkPlugins: [
-        {
-          resolve: `gatsby-remark-images`,
-          options: {
-            maxWidth: 540
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+          // `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              withWebp: true,
+              tracedSVG: true
+            }
+          },
+          {
+            resolve: `gatsby-remark-external-links`,
+            options: {
+              target: `_blank`,
+              rel: `noopener`
+            }
           }
-        }
-      ],
-      plugin: [
-        {
-          resolve: `gatsby-remark-images`,
-          options: {
-            maxWidth: 540
-          }
-        }
-      ]
+        ]
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -46,8 +55,26 @@ module.exports = {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: ['Poppins:400,700', 'Pridi:400,700', 'Space Mono:400,700']
+          families: [
+            'Poppins:400,700',
+            'Pridi:400,700',
+            'Space Mono:400,700',
+            'Ubuntu: 400,700'
+          ]
         }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: 'UA-32580864-4',
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+        // Avoids sending pageview hits from custom paths
+        exclude: ['/preview/**', '/do-not-track/me/too/'],
+        // Delays sending pageview hits on route update (in milliseconds)
+        pageTransitionDelay: 0
       }
     },
     {

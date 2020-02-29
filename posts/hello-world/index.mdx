@@ -1,12 +1,15 @@
 ---
 title: Hello World - from MDX
+author: Tucker Hawkinson
 date: 2020-02-14
+cover: ./cover.jpg
+coverCredit: Photo by Matt Dodd on Unsplash
 published: true
 ---
 
 Here will a live code example go:
 
-```js react-live
+```js
 const onClick = () => {
   alert('You opened me');
 };
@@ -39,7 +42,7 @@ var treePromise = new Promise(function(resolve) {
 
 Code block with code highlighting:
 
-```jsx:title=src/components/post.jsx {5-7,10}
+```js
 import React from 'react';
 
 const Post = ({ data: { post } }) => (
@@ -110,7 +113,7 @@ const scream = (input) => window.alert(input)
 
 Line highlighting without code title:
 
-```js {2,4-5}
+```js
 const test = 3;
 const foo = 'bar';
 const harry = 'potter';
@@ -122,7 +125,7 @@ Here will `inline code` go, just inside the text. Wow!
 
 Code block without line numbers but with highlighting, language, and title:
 
-```tsx:title=src/components/blog.tsx {7-9,16} noLineNumbers
+```js
 import React from 'react';
 
 const Blog = ({ posts }: PostsProps) => {
