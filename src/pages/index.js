@@ -1,18 +1,61 @@
 import React from 'react';
-import { Layout } from '../components/Layout';
 import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import SEO from 'react-seo-component';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
+import { H1 } from '../components/pageElements/H1';
+import { Header } from '../components/Header';
 
-const IndexWrapper = styled.main``;
+const IndexContainer = styled.main`
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px 25px;
+`;
 
-const PostWrapper = styled.main``;
+const IndexWrapper = styled.main`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+`;
+
+const PostWrapper = styled.main`
+  width: 24%;
+  margin-right: 10px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+
+  @media (max-width: 1500px) {
+    width: 32%;
+  }
+
+  @media (max-width: 850px) {
+    width: 48%;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+`;
+
+const PostCardContent = styled.main`
+  padding: 10px;
+`;
 
 const Image = styled(Img)`
   border-radius: 5px;
 `;
+
+const linkStyle = {
+  color: '#212121',
+  textDecoration: 'none'
+};
 
 export default ({ data }) => {
   const {
@@ -27,7 +70,8 @@ export default ({ data }) => {
   } = useSiteMetadata();
   return (
     <>
-      <Layout>
+      <Header siteTitle={title} siteDescription={description}></Header>
+      <IndexContainer>
         <SEO
           title={title}
           titleTemplate={'Programming For Humans'}
@@ -42,18 +86,20 @@ export default ({ data }) => {
         <IndexWrapper>
           {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
             <PostWrapper key={id}>
-              <Link to={fields.slug}>
+              <Link to={fields.slug} style={linkStyle}>
                 {!!frontmatter.cover ? (
                   <Image sizes={frontmatter.cover.childImageSharp.sizes} />
                 ) : null}
-                <h1>{frontmatter.title}</h1>
-                <p>{frontmatter.date}</p>
-                <p>{excerpt}</p>
+                <PostCardContent>
+                  <H1>{frontmatter.title}</H1>
+                  <p>{frontmatter.date}</p>
+                  <p>{excerpt}</p>
+                </PostCardContent>
               </Link>
             </PostWrapper>
           ))}
         </IndexWrapper>
-      </Layout>
+      </IndexContainer>
     </>
   );
 };
@@ -73,7 +119,7 @@ export const query = graphql`
           cover {
             publicURL
             childImageSharp {
-              sizes(maxWidth: 2000, traceSVG: { color: "#693" }) {
+              sizes(maxWidth: 2000, traceSVG: { color: "#fafafa" }) {
                 ...GatsbyImageSharpSizes_tracedSVG
               }
             }

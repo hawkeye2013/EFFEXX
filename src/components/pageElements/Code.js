@@ -17,7 +17,7 @@ const Pre = styled.pre`
     line-height: 1.3rem;
     height: 1.3rem;
   }
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Space Mono', Courier, monospace;
 `;
 
 const LineNo = styled.span`

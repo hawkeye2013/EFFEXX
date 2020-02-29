@@ -1,6 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-import { AutoLink } from './linked-headers.js';
 import { Link } from 'gatsby';
 
 const linkStyles = {
