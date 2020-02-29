@@ -21,9 +21,21 @@ export const theme = {
     }
   },
   fonts: {
-    sans: 'Poppins, sans-serif',
+    title: 'Ubuntu, sans-serif',
+    sans: 'Ubuntu, sans-serif',
     serif: 'Pridi, sans',
     monospace: '"Space Mono", monospace'
+  },
+  fontSize: {
+    title: '3rem',
+    h1: '2rem',
+    h2: '1.75rem'
+  },
+  spacing: {
+    h1: '1rem'
+  },
+  lineHeight: {
+    none: 0
   }
 };
 

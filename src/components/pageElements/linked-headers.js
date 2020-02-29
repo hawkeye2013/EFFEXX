@@ -3,6 +3,7 @@ export const AutoLink = `
     float: left;
     padding-right: 4px;
     margin-left: -20px;
+    text-decoration: none;
   }
   svg {
     visibility: hidden;

@@ -11,9 +11,9 @@ const AppStyles = styled.main`
 export const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
-    <AppStyles>
+    <>
       <Header siteTitle={title} siteDescription={description} />
-      {children}
-    </AppStyles>
+      <AppStyles>{children}</AppStyles>
+    </>
   );
 };

@@ -30,6 +30,7 @@ export default ({ data }) => {
       <Layout>
         <SEO
           title={title}
+          titleTemplate={'Programming For Humans'}
           description={description || 'no description'}
           image={`${siteUrl}${image}`}
           pathname={siteUrl}

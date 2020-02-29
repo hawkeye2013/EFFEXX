@@ -21,6 +21,7 @@ export default ({ data, pageContext }) => {
     <Layout>
       <SEO
         title={title}
+        titleTemplate={title + 'Programming For Humans'}
         description={excerpt}
         image={
           cover === null ? `${siteUrl}${image}` : `${siteUrl}${cover.publicURL}`
